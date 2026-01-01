@@ -149,5 +149,43 @@ If you encounter issues:
 
 ---
 
-**Ready to Go! 🚀**  
+**Ready to Go! 🚀**
 This project is fully configured for cryptocurrency trading on Binance using advanced Deep Reinforcement Learning algorithms.
+
+---
+
+## 📅 Migration Notes
+
+### Python 3.11 Migration (2026-01-01)
+
+The project has been prepared for migration from Python 3.10 to 3.11 with the following major changes planned:
+
+- **Gym → Gymnasium**: Replace deprecated OpenAI Gym with Gymnasium
+- **pandas updates**: Fix deprecated `.append()` calls
+- **Dependencies**: Update all packages to Python 3.11 compatible versions
+
+See [MIGRATION_PLAN.md](MIGRATION_PLAN.md) for detailed migration documentation and timeline.
+
+### How to Migrate to Python 3.11
+
+```bash
+# Install Python 3.11
+pyenv install 3.11.12
+pyenv local 3.11.12
+
+# Install updated dependencies
+pip install -r requirements-python311.txt
+
+# Verify installation
+python -c "import gymnasium; print('✅ Gymnasium:', gymnasium.__version__)"
+python -c "import torch, numpy, pandas; print('✅ All imports successful')"
+```
+
+### Rollback to Python 3.10
+
+```bash
+pyenv local 3.10.12
+pip install -r requirements-python310.txt
+```
+
+**Note**: Migration is currently in planning phase. See `migration/python-3.11-plan` branch for progress.

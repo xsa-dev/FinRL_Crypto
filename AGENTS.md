@@ -1,8 +1,26 @@
-# Trading Agents Documentation
- 
-## Overview
- 
-FinRL_Crypto implements a comprehensive suite of Deep Reinforcement Learning (DRL) agents specifically optimized for cryptocurrency trading. The agent architecture follows the ElegantRL framework, providing both continuous and discrete action spaces for various trading strategies.
+# Agent Development Guidelines
+
+## Commands
+- **Setup**: `pip install -r requirements.txt` (Python 3.10+)
+- **Run single test**: No formal test framework - use individual scripts
+- **Lint/Typecheck**: Not configured - add py lint and mypy if needed
+- **Validation**: `python 2_validate.py` - validates trained agents
+
+## Code Style
+- **Imports**: Standard library first, then third-party, then local modules
+- **Types**: Use type hints for function signatures (follow AgentBase.py:10 pattern)
+- **Naming**: 
+  - Classes: PascalCase (AgentBase, AgentPPO)
+  - Functions/variables: snake_case (calculate_start_end_dates)
+  - Constants: UPPER_CASE (TIMEFRAME, TICKER_LIST)
+- **Error Handling**: Basic try/except blocks, see config_main.py for patterns
+- **Documentation**: Docstrings for functions and classes (follow AgentBase.py:12-26)
+- **Formatting**: Follow existing indentation and spacing patterns
+
+## Architecture Notes
+- Agent inheritance from AgentBase in drl_agents/agents/
+- Configuration in config_main.py with datetime calculations
+- No formal testing - validation through 2_validate.py script
  
 ## Core Architecture
  
